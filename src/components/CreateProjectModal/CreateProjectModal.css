@@ -23,6 +23,10 @@
 }
 
 .create-project-modal-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 700px;
     height: 500px;
     background-color: #ffffff;
@@ -37,6 +41,6 @@
 }
 .create-project-modal-close-button{
     position: relative;
-    top: -120px;
-    right:-700px;
+    top: -250px;
+    right:-290px;
 }
