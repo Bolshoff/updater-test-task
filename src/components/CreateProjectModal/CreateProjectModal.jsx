@@ -3,23 +3,30 @@ import {
   useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
-import tinyMCEApi from '../../assets/tinyMCEApi';
+import { useDispatch } from 'react-redux';
+
+import { tinyMCEApi } from '../../assets/tinyMCEApi';
+
+import { addNewProject } from '../../redux/actions';
 
 function CreateProjectModal({ show, onClose }) {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [descriptionValue, setDescriptionValue] = useState('');
+  const [titleValue, setTitleValue] = useState('');
+  const dispatch = useDispatch();
+  const value = { title: titleValue, description: descriptionValue };
 
   const handleChangeTitle = (e) => {
-    setTitle(e.target.value);
+    setTitleValue(e.target.value);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setTitle('');
-    setDescription('');
-    onClose();
-    console.log(title);
-    console.log(description);
+    if (titleValue) {
+      dispatch(addNewProject(value));
+      setTitleValue('');
+      setDescriptionValue('');
+      onClose();
+    }
   };
 
   const closeOnEscapeKeyDown = useCallback((e) => {
@@ -42,19 +49,26 @@ function CreateProjectModal({ show, onClose }) {
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
       <div className="create-project-modal-content" onClick={(e) => e.stopPropagation()} role="button" tabIndex={0}>
         <form className="create-project-modal-form" action="" onSubmit={submitHandler}>
-          <input type="text" placeholder="Название проекта" onChange={handleChangeTitle} value={title} />
+          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+          <label htmlFor="title" className="placeholder">
+            Новый проект
+          </label>
+          <input id="title" name="title" type="text" className="create-project-modal-form-title-input" onChange={handleChangeTitle} placeholder="Введите названиме проекта" value={titleValue} />
+
           {/* eslint-disable-next-line max-len */}
-          {/* <input type="text" placeholder="Описание" onChange={handleChangeDescription} value={description} /> */}
+
           <Editor
             apiKey={tinyMCEApi}
-            onEditorChange={(newValue) => setDescription(newValue)}
-              /* eslint-disable-next-line no-return-assign */
+            id="description"
+            value={descriptionValue}
+            onEditorChange={(newValue) => setDescriptionValue(newValue)}
+
+              /* eslint-disable-next-line react/jsx-props-no-multi-spaces,no-return-assign */
             onInit={(evt, editor) => editorRef.current = editor}
-            initialValue="<p>This is the initial content of the editor.</p>"
-            value={description}
             init={{
               height: 200,
               menubar: false,
+              placeholder: 'Описание проекта',
               plugins: [
                 'advlist autolink lists link image charmap print preview anchor',
                 'searchreplace visualblocks code fullscreen',
@@ -64,12 +78,16 @@ function CreateProjectModal({ show, onClose }) {
                     + 'bold italic backcolor | alignleft aligncenter '
                     + 'alignright alignjustify | bullist numlist outdent indent | '
                     + 'removeformat | help',
+
               content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
             }}
           />
-          <input type="submit" value="Create" />
+          <input className="create-project-modal-form-submit-button" type="submit" value="Create" />
         </form>
-        <button className="create-project-modal-close-button" type="button" onClick={onClose}>Close</button>
+
+        {/* eslint-disable-next-line max-len */}
+        {/* eslint-disable-next-line jsx-a11y/anchor-has-content,jsx-a11y/anchor-is-valid,jsx-a11y/control-has-associated-label */}
+        <a href="#" className="close" onClick={onClose} />
 
       </div>
 

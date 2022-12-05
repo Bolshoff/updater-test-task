@@ -1,0 +1,21 @@
+.left-menu-bar{
+    position: relative;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #0746a6;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    z-index: 100;
+}
+
+.left-menu-bar:hover{
+    width: 200px;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}

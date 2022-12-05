@@ -1,22 +1,33 @@
-import { ADD_PROJECT, REMOVE_PROJECT } from './actionTypes';
+import { ADD_PROJECT } from './actionTypes';
 
-const projectState = {
+const defaultState = {
   projects: [],
 };
-
-export const projectReducer = (action, state = projectState) => {
-  switch (action) {
+// eslint-disable-next-line default-param-last
+export const projectReducer = (state = defaultState, action) => {
+  switch (action.type) {
     case ADD_PROJECT:
-      return {
-        ...state, projects: [...state.projects, action.payload],
-      };
-    case REMOVE_PROJECT:
       // eslint-disable-next-line no-case-declarations
-      const newProjectList = state.projects.filter((item) => item.id !== action.id);
+      const { id, title, description } = action.payload;
       return {
         ...state,
-        projects: newProjectList,
+        projects: [
+          ...state.projects,
+          {
+            id,
+            title,
+            description,
+            isCompleted: false,
+            tasks: [],
+          }],
       };
+      // case REMOVE_PROJECT:
+      //   // eslint-disable-next-line no-case-declarations
+      //   const newProjectList = state.projects.filter((item) => item.id !== action.id);
+      //   return {
+      //     ...state,
+      //     projects: newProjectList,
+      //   };
 
     default:
       return state;
