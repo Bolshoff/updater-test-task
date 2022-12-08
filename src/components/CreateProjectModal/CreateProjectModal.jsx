@@ -80,6 +80,7 @@ function CreateProjectModal({ show, onClose }) {
                     + 'removeformat | help',
 
               content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+
             }}
           />
           <input className="create-project-modal-form-submit-button" type="submit" value="Create" />

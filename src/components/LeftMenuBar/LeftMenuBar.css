@@ -1,21 +1,47 @@
 .left-menu-bar{
     position: relative;
-    top: 0;
-    width: 20px;
+    display: flex;
     height: 100%;
-    overflow: hidden;
-    background-color: #0746a6;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    -webkit-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
-    z-index: 100;
 }
 
-.left-menu-bar:hover{
-    width: 200px;
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2);
+.left-side-menu-bar{
+    width: 60px;
+    background-color: #f34d06;
+}
+
+.right-side-menu-bar{
+    position: relative;
+    /*top: 0;*/
+    width:200px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fc7509;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    /*z-index: 100;*/
+}
+
+.left-menu-bar-manage{
+    position: relative;
+    top: 250px;
+    padding-left: 20px;
+}
+
+.left-menu-bar-manage-title{
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #3a2116;
+}
+
+/*.left-menu-bar-manage-links{*/
+/*    display: table-cell;*/
+/*    vertical-align: middle;*/
+/*    width: 250px;*/
+/*    height: 30px;*/
+/*    margin-top: 5px;*/
+/*}*/
+.left-menu-bar-manage-links:hover{
+    background-color: #f89a4f;
 }

@@ -1,0 +1,20 @@
+.close-create-task-modal{
+    position: relative;
+    top: -300px;
+    right:-290px;
+}
+
+.close-create-task-modal:before, .close-create-task-modal:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+.close-create-task-modal:before {
+    transform: rotate(45deg);
+}
+.close-create-task-modal:after {
+    transform: rotate(-45deg);
+}

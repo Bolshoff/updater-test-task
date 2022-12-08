@@ -45,13 +45,13 @@
 }
 .create-project-modal-close-button{
     position: relative;
-    top: -370px;
+    top: -400px;
     right:-290px;
 
 }
 .close{
     position: relative;
-    top: -400px;
+    top: -410px;
     right:-290px;
 }
 
@@ -98,14 +98,14 @@
     height: 50px;
     cursor: pointer;
     top:30px;
-    background-color: #1e8ffe;
+    background-color: #f6994f;
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 22px;
 }
 .create-project-modal-form-submit-button:hover{
-    background-color: #0e84f6;
+    background-color: #f87f1e;
 }
 
 

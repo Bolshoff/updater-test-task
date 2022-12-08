@@ -1,0 +1,38 @@
+.event-project-modal{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    min-height: 140px;
+    right: 70px;
+    top: 85px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.15) inset;
+    opacity: 0;
+    z-index: 100;
+}
+.event-project-modal.show{
+    opacity: 1;
+}
+
+.event-project-modal-elem{
+    text-align: center;
+    width: 80%;
+    height: 30px;
+    margin-top: 15px;
+    line-height: 30px;
+}
+.event-project-modal-elem:hover{
+    background-color: #f2f3f6;
+    border-radius: 8px;
+}
+.wrapper{
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    background-color: #f89a4f;
+    visibility: hidden;
+}

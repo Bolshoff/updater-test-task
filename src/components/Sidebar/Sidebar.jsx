@@ -5,7 +5,6 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <LeftMenuBar />
-      <a href="somelink">Проекты</a>
 
     </div>
   );
