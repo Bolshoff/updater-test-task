@@ -33,7 +33,16 @@ export const projectReducer = (state = defaultState, action) => {
         ...state,
         projects: [
           ...state.projects,
-          tasks
+          tasks: [
+      ...state.projects.tasks,
+      {
+        id,
+        title,
+        description,
+        isCompleted: false,
+        subtasks: [],
+      }
+    ],
         ],
       };
 
