@@ -18,18 +18,22 @@ export const deleteProject = (id) => ({
   id,
 });
 
-export const setCurrentProject = (movie) => ({
+export const setCurrentProject = (project) => ({
   type: SET_CURRENT_PROJECT,
-  payload: movie,
+  payload: project,
 
 });
 
-export const addTask = (task) => ({
+export const addTask = (task, projectId, status, priority, number) => ({
   type: ADD_TASK,
   payload: {
+    number,
+    projectId,
     id: Date.now(),
-    title: task?.title,
+    title: task,
     description: task?.description,
+    status,
+    priority,
     subtasks: [],
   },
 });

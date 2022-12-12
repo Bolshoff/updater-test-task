@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTask } from '../../redux/actions';
 
-function CreateTaskModal({ show, onClose }) {
+function CreateTaskModal({ show, onClose, currentProject }) {
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
     if (value) {
-      dispatch(addTask(value));
+      dispatch(addTask(value, currentProject, 'queue', 'low'));
       setValue('');
       onClose();
     }

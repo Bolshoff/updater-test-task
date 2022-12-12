@@ -34,7 +34,8 @@ function ProjectPage() {
         <div className="done list">Завершено</div>
       </div>
       <button className="create-task-button" type="button" onClick={clickHandler}>Create new project</button>
-      <CreateTaskModal onClose={() => setShowCreateWindow(false)} show={showCreateWindow} />
+      {/* eslint-disable-next-line max-len */}
+      <CreateTaskModal onClose={() => setShowCreateWindow(false)} show={showCreateWindow} currentProject={project} />
     </div>
   );
 }
