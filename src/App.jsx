@@ -14,7 +14,6 @@ function App() {
         <Route path="/:title" element={<ProjectPage />} />
       </Routes>
 
-      {/* <MainPage /> */}
     </div>
   );
 }

@@ -10,7 +10,7 @@ function CreateTaskModal({ show, onClose, currentProject }) {
   const submitHandler = (e) => {
     e.preventDefault();
     if (value) {
-      dispatch(addTask(value, currentProject, 'queue', 'low'));
+      dispatch(addTask(value, currentProject, 'in_progress', 'low'));
       setValue('');
       onClose();
     }

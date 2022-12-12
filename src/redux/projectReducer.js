@@ -36,13 +36,11 @@ export const projectReducer = (state = defaultState, action) => {
         projectId, task, status, priority,
       } = action.payload;
 
-      console.log('p.id', state.projects.map((p) => (p.id)));
-      console.log('action id', action.payload.projectId.id);
       return {
         ...state,
         // eslint-disable-next-line max-len
         projects: state.projects.map((p, i) => (p.id === action.payload.projectId.id ? p.tasks.push({
-          number: i.tasks.indexOf(task),
+          number: i,
           projectId,
           id: Date.now(),
           title: task,
@@ -50,6 +48,7 @@ export const projectReducer = (state = defaultState, action) => {
           status,
           priority,
           subtasks: [],
+          comments: [],
         }) && p : p)),
       };
 

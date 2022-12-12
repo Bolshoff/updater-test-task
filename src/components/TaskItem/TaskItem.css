@@ -1,0 +1,24 @@
+.task-item-wrapper{
+    position: relative;
+    margin:0 auto;
+    width: 100%;
+    height: 110px;
+
+}
+
+.task-item {
+    margin: 15px;
+    min-height: 70px;
+    cursor: pointer;
+    background-color: #e2f7df;
+    box-shadow:  3px 2px 13px 0px rgba(50, 50, 50, 0.75);
+}
+.low{
+    background-color: #e2f7df;
+}
+.medium{
+    background-color: #fdf5d0;
+}
+.height{
+    background-color: #fde2f0;
+}
