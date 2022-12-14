@@ -41,7 +41,7 @@ export const projectReducer = (state = defaultState, action) => {
         // eslint-disable-next-line max-len
         projects: state.projects.map((p, i) => (p.id === action.payload.projectId.id ? p.tasks.push({
           number: i,
-          projectId,
+          projectId: projectId.id,
           id: Date.now(),
           title: task,
           description: task?.description,
