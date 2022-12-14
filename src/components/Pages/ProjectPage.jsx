@@ -17,7 +17,6 @@ function ProjectPage() {
 
   const clickTaskHandler = () => {
     setShowTaskWindow(true);
-    console.log(showTaskWindow);
   };
 
   const linkStyle = {
